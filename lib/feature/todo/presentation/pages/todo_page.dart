@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todos_api/core/presentation/widgets/my_appbar.dart';
 import 'package:todos_api/feature/todo/domain/entities/todo.dart';
 import 'package:todos_api/feature/todo/presentation/bloc/todo_bloc.dart';
-import 'package:todos_api/feature/todo/presentation/pages/widgets/todo_card.dart';
+import 'package:todos_api/feature/todo/presentation/widgets/todo_card.dart';
 
 class TodoPage extends StatelessWidget {
   const TodoPage({super.key});
