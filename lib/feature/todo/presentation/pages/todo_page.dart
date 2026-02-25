@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todos_api/core/presentation/widgets/my_appbar.dart';
 import 'package:todos_api/feature/todo/domain/entities/todo.dart';
 import 'package:todos_api/feature/todo/presentation/bloc/todo_bloc.dart';
 import 'package:todos_api/feature/todo/presentation/pages/widgets/todo_card.dart';
@@ -12,16 +13,7 @@ class TodoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Mes Todos'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: () => context.read<TodoBloc>().add(FetchTodosEvent()),
-          ),
-        ],
-      ),
+      appBar: MyAppbar(title: 'Mes Todos'), 
       body: BlocBuilder<TodoBloc, TodoState>(
         builder: (context, state) {
           if (state is TodoInitial) {
@@ -79,5 +71,3 @@ class TodoPage extends StatelessWidget {
     );
   }
 }
-
-
